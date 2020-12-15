@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEngine;
 
 public class ProjectileMover : MonoBehaviour
@@ -25,44 +26,51 @@ public class ProjectileMover : MonoBehaviour
         
         //Pooling var saves
         originalSpeed = speed;
-        originalFlash = flash;
-        originalHit = hit;
         originalHitOffset = hitOffset;
+        if(!originalFlash)
+        {
+            originalFlash = Instantiate(flash, transform.position, Quaternion.identity);
+        }
     }
 
     private void OnEnable()
     {
+        //Set original RB vars
         speed = originalSpeed;
-        hit = originalHit;
         hitOffset = originalHitOffset;
-        flash = originalFlash;
         rb.constraints = RigidbodyConstraints.None;
         
-        //GetComponent<ParticleSystem>().Play();
+        //Set original postion
+        originalFlash.transform.position = transform.position;
+        originalFlash.transform.rotation = Quaternion.identity;
+        
+        //Activate projectile once it's done
+        originalFlash.SetActive(true);
+        originalFlash.GetComponentInChildren<ParticleSystem>().Play();
+        
+
     }
 
-    void Start()
+    private void Start()
     {
-        
         if (flash != null)
         {
-            var flashInstance = Instantiate(flash, transform.position, Quaternion.identity);
-            flashInstance.transform.forward = gameObject.transform.forward;
-            var flashPs = flashInstance.GetComponent<ParticleSystem>();
+            originalFlash.transform.forward = gameObject.transform.forward;
+            var flashPs = originalFlash.GetComponent<ParticleSystem>();
             if (flashPs != null)
             {
-                Destroy(flashInstance, flashPs.main.duration);
+                StartCoroutine(DisableParticle(originalFlash,flashPs,flashPs.main.duration));
             }
             else
             {
-                var flashPsParts = flashInstance.transform.GetChild(0).GetComponent<ParticleSystem>();
-                Destroy(flashInstance, flashPsParts.main.duration);
+                var flashPsParts = originalFlash.transform.GetChild(0).GetComponent<ParticleSystem>();
+                StartCoroutine(DisableParticle(originalFlash,flashPsParts,flashPsParts.main.duration));
             }
         }
         //Destroy(gameObject,5);
 	}
 
-    void FixedUpdate ()
+    private void FixedUpdate ()
     {
 		if (speed != 0)
         {
@@ -70,7 +78,7 @@ public class ProjectileMover : MonoBehaviour
         }
 	}
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
        
         //Lock all axes movement and rotation
@@ -83,20 +91,41 @@ public class ProjectileMover : MonoBehaviour
 
         if (hit != null)
         {
-            var hitInstance = Instantiate(hit, pos, rot);
-            if (UseFirePointRotation) { hitInstance.transform.rotation = gameObject.transform.rotation * Quaternion.Euler(0, 180f, 0); }
-            else if (rotationOffset != Vector3.zero) { hitInstance.transform.rotation = Quaternion.Euler(rotationOffset); }
-            else { hitInstance.transform.LookAt(contact.point + contact.normal); }
-
-            var hitPs = hitInstance.GetComponent<ParticleSystem>();
-            if (hitPs != null)
+            if(!originalHit)
             {
-                Destroy(hitInstance, hitPs.main.duration);
+                originalHit = Instantiate(hit, pos, rot);
             }
             else
             {
-                var hitPsParts = hitInstance.transform.GetChild(0).GetComponent<ParticleSystem>();
-                Destroy(hitInstance, hitPsParts.main.duration);
+                originalHit.transform.position = pos;
+                originalHit.transform.rotation = rot;
+                
+                originalHit.SetActive(true);
+                originalHit.GetComponentInChildren<ParticleSystem>().Play();
+            }
+
+            if (UseFirePointRotation)
+            {
+                originalHit.transform.rotation = gameObject.transform.rotation * Quaternion.Euler(0, 180f, 0);
+            }
+            else if (rotationOffset != Vector3.zero)
+            {
+                originalHit.transform.rotation = Quaternion.Euler(rotationOffset);
+            }
+            else
+            {
+                originalHit.transform.LookAt(contact.point + contact.normal);
+            }
+
+            var hitPs = originalHit.GetComponent<ParticleSystem>();
+            if (hitPs != null)
+            {
+                StartCoroutine(DisableParticle(originalHit,hitPs, hitPs.main.duration));
+            }
+            else
+            {
+                var hitPsParts = originalHit.transform.GetChild(0).GetComponent<ParticleSystem>();
+                StartCoroutine(DisableParticle(originalHit,hitPsParts, hitPsParts.main.duration));
             }
         }
         foreach (var detachedPrefab in Detached)
@@ -111,5 +140,12 @@ public class ProjectileMover : MonoBehaviour
         gameObject.SetActive(false);
         //GetComponent<ParticleSystem>().Stop();
         //Destroy(gameObject);
+    }
+
+    private IEnumerator DisableParticle(GameObject particle, ParticleSystem particleSystem, float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        particleSystem.Stop();
+        particle.SetActive(false);
     }
 }

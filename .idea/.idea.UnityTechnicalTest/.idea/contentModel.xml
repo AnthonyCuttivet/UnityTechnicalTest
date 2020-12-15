@@ -89,6 +89,11 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="CameraMovement.cs" t="Include" />
+          <e p="EnemyBehavior.cs" t="Include" />
+          <e p="Managers" t="Include">
+            <e p="EnemySpawningManager.cs" t="Include" />
+            <e p="GameManager.cs" t="Include" />
+          </e>
           <e p="PlayerControls.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
         </e>
