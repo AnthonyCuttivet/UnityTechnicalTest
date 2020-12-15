@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public int killPointsBase = 100;
     public int pointsModifier = 20;
     public TextMeshProUGUI scoreText;
+    public GameObject scoreGain;
     
     private void Awake()
     {
@@ -44,6 +45,11 @@ public class GameManager : MonoBehaviour
 
     public void AddPoints()
     {
-        score += killPointsBase + (Random.Range(-pointsModifier, pointsModifier));
+        int scoreToAdd = killPointsBase + (Random.Range(-pointsModifier, pointsModifier));
+        
+        //Add score animation
+        scoreGain.GetComponent<TextMeshProUGUI>().text = "+ " + scoreToAdd.ToString();
+        scoreGain.SetActive(true);
+        score += scoreToAdd;
     }
 }

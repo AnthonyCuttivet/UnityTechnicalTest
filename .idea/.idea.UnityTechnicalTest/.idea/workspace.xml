@@ -15,6 +15,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/EnemySpawningManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerCharacteristics.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Juice/ScoreGainEffect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Proto_Splashy_CUTTIVET/Assets/Scripts/PointsGainedAnim.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Users/Anthony/Downloads/Test.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -27,8 +29,9 @@
         <option value="$PROJECT_DIR$/Assets/External Assets/Toon projectiles/Scripts/ProjectileMover.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCharacteristics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Juice/ScoreGainEffect.cs" />
       </list>
     </option>
   </component>
