@@ -32,7 +32,8 @@ public class EnemySpawningManager : MonoBehaviour
         GameObject enemyToSpawn = enemiesList[enemyPoolIndex];
         enemyToSpawn.transform.position = GetRandomSpawningPoint();
         enemyToSpawn.SetActive(true);
-        if(++enemyPoolIndex >= enemiesList.Count)
+        //Hotfix security
+        if(++enemyPoolIndex + 5 >= enemiesList.Count)
         {
             enemyPoolIndex = 0;
         }
