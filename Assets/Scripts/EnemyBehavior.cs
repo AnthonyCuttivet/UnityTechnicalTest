@@ -56,6 +56,9 @@ public class EnemyBehavior : MonoBehaviour
         { 
             wasHit = true;
            InflictDamage(playerMech.GetComponent<PlayerCharacteristics>().attack);
+           
+           //Add player score
+           GameManager._instance.AddPoints();
            PlayDestroyAnimation();
         }
     }

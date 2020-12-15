@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour
     #region Member Variables
 
     public Transform target;
-    private const float SMOOTH_SPEED = 0.125f;
+    private const float SMOOTH_SPEED = 3f;
     public Vector3 offset;
 
     #endregion
