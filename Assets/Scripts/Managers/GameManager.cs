@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
@@ -17,6 +18,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public GameObject scoreGain;
     
+    //Combo
+    public int combo = 0;
+    public TextMeshProUGUI comboText;
+    
     private void Awake()
     {
         // if the singleton hasn't been initialized yet
@@ -29,18 +34,14 @@ public class GameManager : MonoBehaviour
         _instance = this;
         DontDestroyOnLoad( this.gameObject );
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
         //Score
         scoreText.text = score.ToString();
+        //Combo
+        comboText.text = combo.ToString();
     }
 
     public void AddPoints()
@@ -51,5 +52,15 @@ public class GameManager : MonoBehaviour
         scoreGain.GetComponent<TextMeshProUGUI>().text = "+ " + scoreToAdd.ToString();
         scoreGain.SetActive(true);
         score += scoreToAdd;
+    }
+
+    public void AddCombo()
+    {
+        combo++;
+    }
+
+    public void ResetCombo()
+    {
+        combo = 0;
     }
 }

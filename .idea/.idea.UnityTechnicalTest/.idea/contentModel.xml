@@ -108,6 +108,7 @@
           <e p="CameraMovement.cs" t="Include" />
           <e p="EnemyBehavior.cs" t="Include" />
           <e p="Juice" t="Include">
+            <e p="ComboUpAnimation.cs" t="Include" />
             <e p="ScoreGainEffect.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">

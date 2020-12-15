@@ -30,8 +30,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCharacteristics.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Juice/ScoreGainEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
       </list>
     </option>
   </component>

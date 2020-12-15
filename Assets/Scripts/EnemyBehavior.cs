@@ -49,6 +49,9 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            //Reset combo on hit
+            GameManager._instance.ResetCombo();
+            
             playerMech.GetComponent<PlayerCharacteristics>().InflictDamage(1);
             PlayDestroyAnimation();
         }
@@ -59,6 +62,9 @@ public class EnemyBehavior : MonoBehaviour
            
            //Add player score
            GameManager._instance.AddPoints();
+           //Add player combo
+           GameManager._instance.AddCombo();
+           
            PlayDestroyAnimation();
         }
     }
