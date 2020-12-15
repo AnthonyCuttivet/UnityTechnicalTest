@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Anthony\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Anthony\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_UnityTechnicalTest.1457017731.00" t="ExcludeRecursive" />
+    <e p="D:\UnityProjects\UnityTechnicalTest" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="External Assets" t="Include">
+          <e p="ColorSkies" t="Include">
+            <e p="Demo" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="LookCamera.cs" t="Include" />
+                <e p="SkyboxChanger.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Toon projectiles" t="Include">
+            <e p="Demo scene" t="Include">
+              <e p="DemoShooting.cs" t="Include" />
+              <e p="HDRP and URP(LWRP).txt" t="Include" />
+              <e p="Readme.txt" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="AutoDestroyPS.cs" t="Include" />
+              <e p="ProjectileMover.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="Add_CenterGlow.shader" t="Include" />
+              <e p="Add_Fresnel.shader" t="Include" />
+              <e p="AddTrail.shader" t="Include" />
+              <e p="Blend_CenterGlow.shader" t="Include" />
+              <e p="Blend_TwoSides.shader" t="Include" />
+              <e p="DissolveNoise.shader" t="Include" />
+            </e>
+          </e>
+          <e p="WarFX" t="Include">
+            <e p="!WarFX Readme.txt" t="Include" />
+            <e p="_Effects" t="Include">
+              <e p="MuzzleFlashes" t="Include">
+                <e p="!MuzzleFlash Differences.txt" t="Include" />
+              </e>
+            </e>
+            <e p="_Effects (Mobile)" t="Include">
+              <e p="MuzzleFlashes" t="Include">
+                <e p="!MuzzleFlash Differences.txt" t="Include" />
+              </e>
+            </e>
+            <e p="Demo" t="Include">
+              <e p="Assets" t="Include">
+                <e p="CFX_AutoStopLoopedEffect.cs" t="Include" />
+                <e p="CFX_Demo_RandomDir.cs" t="Include" />
+                <e p="CFX_Demo_RotateCamera.cs" t="Include" />
+                <e p="CFX_Demo_Translate.cs" t="Include" />
+                <e p="WFX_Demo.cs" t="Include" />
+                <e p="WFX_Demo_DeleteAfterDelay.cs" t="Include" />
+                <e p="WFX_Demo_New.cs" t="Include" />
+                <e p="WFX_Demo_RandomDir.cs" t="Include" />
+                <e p="WFX_Demo_Wall.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Editor" t="Include">
+              <e p="CFX_SpawnSystemEditor.cs" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="CFX_AutoDestructShuriken.cs" t="Include" />
+              <e p="CFX_LightIntensityFade.cs" t="Include" />
+              <e p="WFX_BulletHoleDecal.cs" t="Include" />
+              <e p="WFX_LightFlicker.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="WFX_S Add Scroll.shader" t="Include" />
+              <e p="WFX_S Alpha-Diffuse TintColor.shader" t="Include" />
+              <e p="WFX_S Alpha-Specular TintColor.shader" t="Include" />
+              <e p="WFX_S AlphaBlend NoSoftParticles.shader" t="Include" />
+              <e p="WFX_S AlphaBlend Scroll.shader" t="Include" />
+              <e p="WFX_S Multiply Soft Scroll.shader" t="Include" />
+              <e p="WFX_S Multiply Soft.shader" t="Include" />
+              <e p="WFX_S Particle Add A8.shader" t="Include" />
+              <e p="WFX_S Particle AddSoft A8.shader" t="Include" />
+              <e p="WFX_S Particle Multiply A8.shader" t="Include" />
+              <e p="WFX_S Smoke Scroll.shader" t="Include" />
+            </e>
+            <e p="Spawn System" t="Include">
+              <e p="CFX_SpawnSystem.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="CameraMovement.cs" t="Include" />
+          <e p="PlayerControls.cs" t="Include" />
+          <e p="PlayerMovement.cs" t="Include" />
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="UnityTechnicalTest.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
