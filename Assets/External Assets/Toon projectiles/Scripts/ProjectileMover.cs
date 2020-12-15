@@ -88,7 +88,7 @@ public class ProjectileMover : MonoBehaviour
         ContactPoint contact = collision.contacts[0];
         Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
         Vector3 pos = contact.point + contact.normal * hitOffset;
-
+        
         if (hit != null)
         {
             if(!originalHit)
@@ -120,13 +120,14 @@ public class ProjectileMover : MonoBehaviour
             var hitPs = originalHit.GetComponent<ParticleSystem>();
             if (hitPs != null)
             {
-                StartCoroutine(DisableParticle(originalHit,hitPs, hitPs.main.duration));
+                //StartCoroutine(DisableParticle(originalHit,hitPs, hitPs.main.duration));
             }
             else
             {
                 var hitPsParts = originalHit.transform.GetChild(0).GetComponent<ParticleSystem>();
-                StartCoroutine(DisableParticle(originalHit,hitPsParts, hitPsParts.main.duration));
+                //StartCoroutine(DisableParticle(originalHit,hitPsParts, hitPsParts.main.duration));
             }
+
         }
         foreach (var detachedPrefab in Detached)
         {
@@ -138,6 +139,8 @@ public class ProjectileMover : MonoBehaviour
         
         //Deactivate projectile for pooling
         gameObject.SetActive(false);
+        
+        
         //GetComponent<ParticleSystem>().Stop();
         //Destroy(gameObject);
     }

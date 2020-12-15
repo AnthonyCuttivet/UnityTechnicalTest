@@ -10,7 +10,7 @@ public class PlayerControls : MonoBehaviour
     public GameObject LArmSocket;
     public List<GameObject> basicProjectilesPool;
     public int numberOfProjectiles = 2;
-    public int projectilePoolIndex = 0;
+    private int projectilePoolIndex = 0;
     private Animator mechAnimator;
 
     public float fireRate = 0.3f;

@@ -14,6 +14,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerControls.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/EnemySpawningManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyBehavior.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerCharacteristics.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Users/Anthony/Downloads/Test.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -22,10 +23,11 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControls.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/External Assets/Toon projectiles/Scripts/ProjectileMover.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/EnemySpawningManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControls.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerCharacteristics.cs" />
+        <option value="$PROJECT_DIR$/Assets/External Assets/Toon projectiles/Scripts/ProjectileMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyBehavior.cs" />
       </list>
     </option>
   </component>
@@ -84,5 +86,15 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="629" y="181" width="1682" height="1027" key="dock-window-1" timestamp="1608035426673">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="629" y="181" width="1682" height="1027" key="dock-window-1/0.0.1920.1040/-1920.174.1920.1040@0.0.1920.1040" timestamp="1608035426673" />
+    <state x="623" y="225" key="search.everywhere.popup" timestamp="1608039955049">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" key="search.everywhere.popup/0.0.1920.1040/-1920.174.1920.1040@0.0.1920.1040" timestamp="1608039955049" />
   </component>
 </project>
