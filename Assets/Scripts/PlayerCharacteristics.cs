@@ -41,7 +41,7 @@ public class PlayerCharacteristics : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
-            //Game OVER
+            GameManager._instance.GameOver();
         }
     }
 }

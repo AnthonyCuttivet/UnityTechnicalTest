@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     public int combo = 0;
     public TextMeshProUGUI comboText;
     
+    //Game Over
+    public GameObject gameOverGO;
+    
     private void Awake()
     {
         // if the singleton hasn't been initialized yet
@@ -62,5 +65,11 @@ public class GameManager : MonoBehaviour
     public void ResetCombo()
     {
         combo = 0;
+    }
+
+    public void GameOver()
+    {
+        gameOverGO.SetActive(true);
+        Time.timeScale = 0;
     }
 }
