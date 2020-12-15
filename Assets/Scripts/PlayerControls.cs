@@ -1,26 +1,51 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class PlayerControls : MonoBehaviour
 {
     public GameObject RArmSocket;
     public GameObject LArmSocket;
-    public List<GameObject> projectilesReadyPool;
-    private int projectilePoolIndex = 0;
-    
+    public List<GameObject> basicProjectilesPool;
+    public int numberOfProjectiles = 2;
+    public int projectilePoolIndex = 0;
+    private Animator mechAnimator;
+
+    public float fireRate = 0.3f;
+    private float timeSinceLastFire = 0.1f;
+
+    private void Start()
+    {
+        mechAnimator = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        //Animate player
+        mechAnimator.SetBool("is_firing", Input.GetButton("Fire1"));
+    }
+    
+    private void ShootProjectile(GameObject armSocket)
+    {
+        GameObject projectile = basicProjectilesPool[projectilePoolIndex];
+        projectile.transform.position = armSocket.transform.position;
+        projectile.transform.rotation = armSocket.transform.rotation;
+        projectile.SetActive(true);
+        if(++projectilePoolIndex >= basicProjectilesPool.Count)
         {
-            Shoot();
+            projectilePoolIndex = 0;
         }
     }
 
-    void Shoot()
+    private void Shoot()
     {
-        
+        ShootProjectile(RArmSocket);
+        ShootProjectile(LArmSocket); 
+        timeSinceLastFire = 0f;
     }
+
+
 }

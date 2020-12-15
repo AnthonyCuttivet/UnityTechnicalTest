@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,9 +14,36 @@ public class ProjectileMover : MonoBehaviour
     private Rigidbody rb;
     public GameObject[] Detached;
 
-    void Start()
+    private float originalSpeed;
+    private float originalHitOffset;
+    private GameObject originalHit;
+    private GameObject originalFlash;
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        
+        //Pooling var saves
+        originalSpeed = speed;
+        originalFlash = flash;
+        originalHit = hit;
+        originalHitOffset = hitOffset;
+    }
+
+    private void OnEnable()
+    {
+        speed = originalSpeed;
+        hit = originalHit;
+        hitOffset = originalHitOffset;
+        flash = originalFlash;
+        rb.constraints = RigidbodyConstraints.None;
+        
+        //GetComponent<ParticleSystem>().Play();
+    }
+
+    void Start()
+    {
+        
         if (flash != null)
         {
             var flashInstance = Instantiate(flash, transform.position, Quaternion.identity);
@@ -31,7 +59,7 @@ public class ProjectileMover : MonoBehaviour
                 Destroy(flashInstance, flashPsParts.main.duration);
             }
         }
-        Destroy(gameObject,5);
+        //Destroy(gameObject,5);
 	}
 
     void FixedUpdate ()
@@ -78,6 +106,10 @@ public class ProjectileMover : MonoBehaviour
                 detachedPrefab.transform.parent = null;
             }
         }
-        Destroy(gameObject);
+        
+        //Deactivate projectile for pooling
+        gameObject.SetActive(false);
+        //GetComponent<ParticleSystem>().Stop();
+        //Destroy(gameObject);
     }
 }
